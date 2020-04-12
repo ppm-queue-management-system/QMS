@@ -92,8 +92,25 @@ body {
         padding-top: 15px;
     }
 
-    #waitingTime {
-        font-size: 18px;
+    .displayInLineElement1, .displayInLineElement3{
+        display:inline-block;
+        vertical-align:top;
+        margin: 5%;
+    }
+
+    .displayInLineElement2{
+        display:inline-block;
+        vertical-align:top;
+        margin: 5% ;
+    }
+
+    #studentOptions{
+        display: block;
+        margin: 5%;
+    }
+
+    #customFontSize {
+        font-size: 20px;
     }
 
     a {
