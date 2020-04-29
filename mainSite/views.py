@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from django.template import RequestContext
+
 # Create your views here.
 def login(request):
     return render(request, 'mainSite/login.html')
@@ -15,3 +17,9 @@ def cancelTicket(request):
 
 def bookTicket(request):
     return render(request, 'mainSite/bookTicket.html')
+
+def index(request):
+    return render(request, 'mainSite/index.html')
+
+def timeSlot(request):
+    return render(request, 'mainSite/timeSlot.php')
