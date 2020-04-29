@@ -38,4 +38,4 @@ class HomeView(TemplateView):
 #            form = HomeForm()
 #        args = {'form':form, 'text':text}
 #        return render(request, self.template_name, args)
-         return render(request, self.template_name, {'form':form})
+        return render(request, self.template_name, {'form':form})
