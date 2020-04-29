@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'mainSite/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'mainSite/css/style.css' %}" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -12,7 +12,7 @@
   <body>
     <div class="main">
       <p class="sign" align="center">Print Shop</p>
-        
+
       <a class="submit">Book a ticket</a>
       <br><br><br>
       <a class="submit">Adjust ticket</a>
@@ -20,7 +20,7 @@
       <a class="submit">Cancel ticket</a>
 
       <p class="sign" align="center" id="waitingTime">Current waiting time</p>
-        
+
       <script>
         // Set the date we're counting down to
         var countDownDate = new Date;
@@ -43,7 +43,7 @@
           // Output the result in an element with id="demo"
           document.getElementById("demo").innerHTML =minutes + "m " + seconds + "s ";
 
-          // If the count down is over, write some text 
+          // If the count down is over, write some text
           if (distance < 0) {
             clearInterval(x);
             document.getElementById("demo").innerHTML = "EXPIRED";
