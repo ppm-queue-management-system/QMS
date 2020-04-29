@@ -18,9 +18,6 @@ def adjustTicket(request):
 def cancelTicket(request):
     return render(request, 'mainSite/cancelTicket.html')
 
-#def bookTicket(request):
-#    return render(request, 'mainSite/bookTicket.html')
-
 def index(request):
     return render(request, 'mainSite/index.html')
 
@@ -33,9 +30,8 @@ class HomeView(TemplateView):
     
     def post(self, request):
         form = HomeForm(request.POST)
-#        if form.is_valid():
-#            text = form.clean_data['post']
-#            form = HomeForm()
-#        args = {'form':form, 'text':text}
-#        return render(request, self.template_name, args)
-        return render(request, self.template_name, {'form':form})
+        if form.is_valid():
+            text = form.cleaned_data['post']
+            form = HomeForm()
+        args = {'form':form, 'text':text}
+        return render(request, self.template_name, args)
