@@ -1,6 +1,9 @@
+from django.views.generic import TemplateView
 from django.shortcuts import render
 
 from django.template import RequestContext
+
+from mainSite.forms import  HomeForm
 
 # Create your views here.
 def login(request):
@@ -15,11 +18,24 @@ def adjustTicket(request):
 def cancelTicket(request):
     return render(request, 'mainSite/cancelTicket.html')
 
-def bookTicket(request):
-    return render(request, 'mainSite/bookTicket.html')
+#def bookTicket(request):
+#    return render(request, 'mainSite/bookTicket.html')
 
 def index(request):
     return render(request, 'mainSite/index.html')
 
-def timeSlot(request):
-    return render(request, 'mainSite/timeSlot.php')
+class HomeView(TemplateView):
+    template_name = 'mainSite/bookTicket.html'
+    
+    def get(self, request):
+        form = HomeForm()
+        return render(request, self.template_name, {'form':form})
+    
+    def post(self, request):
+        form = HomeForm(request.POST)
+#        if form.is_valid():
+#            text = form.clean_data['post']
+#            form = HomeForm()
+#        args = {'form':form, 'text':text}
+#        return render(request, self.template_name, args)
+         return render(request, self.template_name, {'form':form})
