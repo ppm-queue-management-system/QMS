@@ -1,0 +1,73 @@
+{% extends 'mainSite/main.html' %}
+
+{% block content %}
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">NTU PrintShop</h1>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <div class="col-lg-4">
+
+              <!-- Circle Buttons -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Operations</h6>
+                </div>
+                <div class="card-body">
+                  <a href="#" class="btn btn-primary btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-flag"></i>
+                    </span>
+                    <span class="text">Next Ticket</span>
+                  </a>
+                  <div class="my-2"></div>
+                  <a href="#" class="btn btn-success btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-check"></i>
+                    </span>
+                    <span class="text">Finish Ticket</span>
+                  </a>
+                  <div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span class="text">Transfer Ticket</span>
+                  </a>
+                  <div class="my-2"></div>
+                  <a href="#" class="btn btn-danger btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-trash"></i>
+                    </span>
+                    <span class="text">Cancel Ticket</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-lg-8">
+
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Current Ticket</h6>
+                </div>
+                <div class="card-body">
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+{% endblock %}
