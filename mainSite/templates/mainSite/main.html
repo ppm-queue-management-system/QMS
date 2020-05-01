@@ -287,6 +287,76 @@
     <script src="{% static 'mainSite/js/demo/chart-pie-demo.js' %}"></script>
     <script src="{% static 'mainSite/js/demo/chart-bar-demo.js' %}"></script>
 
+
+
+
+
+<!-- Operator Script -->
+
+
+
+	<script>
+var addTicket = (function () {
+	var ticketNum = 0;
+  return function () {ticketNum += 1; return ticketNum;}
+})();
+
+var addPerson = (function () {
+	var personNum = 0;
+  return function () {personNum += 1; return personNum;}
+})();
+
+function initiateID(){
+  document.getElementById("ticket").innerHTML = addTicket();
+  document.getElementById("personID").innerHTML = addPerson();
+
+  
+};
+	
+	function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+};
+
+
+
+
+  function initaiteTimer() {
+    var ThirtyMinutes = 60 * 30,
+        display = document.querySelector('#time');
+    startTimer(ThirtyMinutes, display);
+};
+
+	function nextTicket() {
+	
+	initaiteTimer();
+	initiateID();
+};
+
+
+
+
+	</script>
+
+
+
+
+
+
   </body>
+  
+  
 
   </html>
