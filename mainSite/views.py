@@ -1,11 +1,32 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.template import RequestContext
-from mainSite.forms import  AdjustTicketForm, CancelTicketForm, BookTicketForm
+from mainSite.forms import  SigninForm, AdjustTicketForm, CancelTicketForm, BookTicketForm
 
 # Create your views here.
-def login(request):
-    return render(request, 'mainSite/login.html')
+class SigninView(TemplateView):
+    template_name = 'mainSite/login.html'
+    
+    def get(self, request):
+        form = SigninForm()
+        return render(request, self.template_name, {'form':form})
+    
+    def post(self, request):
+        form = SigninForm(request.POST)
+        if form.is_valid():
+            username = form.save(commit=False)
+            password = form.save(commit=False)
+            username.save()
+            password.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            form = SigninForm()
+            if 'N' in username or 'n' in username:
+                return redirect('../student')
+            else:
+                return redirect('../operator')
+        args = {'form':form, 'username':username, 'password':password}
+        return render(request, self.template_name, args)
 
 def administrator(request):
     return render(request, 'mainSite/administrator.html')
