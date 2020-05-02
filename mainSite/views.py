@@ -26,9 +26,11 @@ class BookTicketView(TemplateView):
     def post(self, request):
         form = BookTicketForm(request.POST)
         if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
             time = form.cleaned_data['post']
             form = BookTicketForm()
-            return redirect('../bookTicket')
+            return redirect('../student')
         args = {'form':form, 'time':time}
         return render(request, self.template_name, args)
 
@@ -42,6 +44,8 @@ class AdjustTicketView(TemplateView):
     def post(self, request):
         form = AdjustTicketForm(request.POST)
         if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
             time = form.cleaned_data['post']
             form = AdjustTicketForm()
             return redirect('../adjustTicket')
@@ -58,6 +62,8 @@ class CancelTicketView(TemplateView):
     def post(self, request):
         form = CancelTicketForm(request.POST)
         if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
             time = form.cleaned_data['post']
             form = CancelTicketForm()
             return redirect('../student')
