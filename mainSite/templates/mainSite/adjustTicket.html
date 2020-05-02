@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mainSite/css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Adjust Ticket</title>
+      
+    <script>
+        function on() {
+          document.getElementById("overlay").style.display = "block";
+            }
+
+        function off() {
+          document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+      
+  </head>
+  <body>
+    <div class="main">
+      <p class="sign" align="center">Adjust ticket</p>
+      <p class="sign" align="center" id="customFontSize">Are you sure you want to adjust the ticket?</p>
+      
+      <div class="displayInLineElement1"><a class="submit" onclick="on()">Yes</a> </div>
+      <div class="displayInLineElement2"> </div>
+      <div class="displayInLineElement3"><a class="submit" href="../student">No</a> </div>
+      <div id="overlay" >
+        <div id="text">
+
+            <script>
+             var csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            </script>
+        
+            <form action="" method="post">
+            <label id="labelColor">Enter new time slot: </label>
+            {{form.as_p}}
+            {% csrf_token %}
+            <button type="submit" class="submit alignContent">Submit</button>
+        </form>
+        
+        <h2>{{ time }}</h2>
+         </div>
+      </div>
+        
+      <p class="sign" align="center" id="customFontSize">Press below to book a new ticket</p>
+      <a class="submit" id="bookTicketAlign" href="../bookTicket">Book Ticket</a>
+    </div>
+  </body>
+</html>

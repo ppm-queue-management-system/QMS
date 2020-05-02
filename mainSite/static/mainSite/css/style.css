@@ -98,6 +98,67 @@ body {
         text-decoration: none
     }
 
+#timer{
+      font-size: 20px;
+    }
+
+.alignContent{
+    margin-left: 30% ;
+}
+
+.displayInLineElement1, .displayInLineElement3{
+        display:inline-block;
+        vertical-align:top;
+        margin: 5%;
+    }
+
+    .displayInLineElement2{
+        display:inline-block;
+        vertical-align:top;
+        margin: 5% ;
+    }
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 400px;
+  height: 400px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+       
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fbe6fe;
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 30px;
+  color: #8C55AA;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+    #customFontSize {
+        font-size: 20px;
+    }
+
+#bookTicketAlign{
+    margin-left: 32% ;
+}
+
+/*
+#labelColor{
+    color: #8C55AA; 
+}
+*/
+
     @media (max-width: 600px) {
         .main {
             border-radius: 0px;
