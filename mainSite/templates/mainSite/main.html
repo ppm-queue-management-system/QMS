@@ -288,16 +288,12 @@
     <script src="{% static 'mainSite/js/demo/chart-bar-demo.js' %}"></script>
 
 
-
-
-
-<!-- Operator Script -->
-
-
-
-	<script>
+<script>
+	
+var ticketNum = 0;
+	
 var addTicket = (function () {
-	var ticketNum = 0;
+	
   return function () {ticketNum += 1; return ticketNum;}
 })();
 
@@ -312,6 +308,8 @@ function initiateID(){
 
   
 };
+
+
 	
 	function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
@@ -326,17 +324,24 @@ function initiateID(){
 
         if (--timer < 0) {
             timer = duration;
+			document.getElementById("DueTickets").innerHTML += ticketNum + ",";
+			  document.getElementById("ticket").innerHTML = addTicket();
+				document.getElementById("personID").innerHTML = addPerson();
         }
+
+		
     }, 1000);
 };
 
-
+function myStopFunction() {
+  clearInterval(timer);
+}
 
 
   function initaiteTimer() {
-    var ThirtyMinutes = 60 * 30,
+    var FiveMinutes = 60 * 5,
         display = document.querySelector('#time');
-    startTimer(ThirtyMinutes, display);
+    startTimer(FiveMinutes, display);
 };
 
 	function nextTicket() {
@@ -347,8 +352,18 @@ function initiateID(){
 
 
 
+	function cancelTicket(){
+	document.getElementById("CancledTickets").innerHTML += ticketNum + ",";
+	document.getElementById("ticket").innerHTML = addTicket();
+  document.getElementById("personID").innerHTML = addPerson();
+	
+	
+	};
 
-	</script>
+</script>
+
+
+
 
 
 
