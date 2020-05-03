@@ -1,5 +1,13 @@
 from django import forms
-from mainSite.models import BookTicketModel, AdjustTicketModel, CancelTicketModel
+from mainSite.models import SigninModel, BookTicketModel, AdjustTicketModel, CancelTicketModel
+
+class SigninForm(forms.ModelForm):
+    username = forms.CharField(widget=forms.TextInput(attrs={'class' : 'sign'}), label='Username')
+    password = forms.CharField(widget=forms.TextInput(attrs={'class' : 'sign'}), label='Password')
+    
+    class Meta:
+        model = SigninModel
+        fields = ('username', 'password',)
 
 class BookTicketForm(forms.ModelForm):
     post = forms.CharField(widget=forms.TextInput(attrs={'class' : 'sign'}), label='')
@@ -21,6 +29,6 @@ class CancelTicketForm(forms.ModelForm):
     class Meta:
         model = CancelTicketModel
         fields = ('post',)
-
+        
 
     
