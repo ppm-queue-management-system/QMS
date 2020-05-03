@@ -289,10 +289,12 @@
 
 
 <script>
-	
+
 var ticketNum = 0;
 	
 var addTicket = (function () {
+
+var stoptime = false;
 	
   return function () {ticketNum += 1; return ticketNum;}
 })();
@@ -313,7 +315,11 @@ function initiateID(){
 	
 	function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
-    setInterval(function () {
+	
+	
+    
+	setInterval(function () {
+	if (stoptime == false){
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -321,20 +327,31 @@ function initiateID(){
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
+		}
+		
+		if (stoptime == true){
+		timer = 0;
+		
+		}
+		
+		
+        if (--timer < 0 && stoptime == false) {
             timer = duration;
 			document.getElementById("DueTickets").innerHTML += ticketNum + ",";
 			  document.getElementById("ticket").innerHTML = addTicket();
 				document.getElementById("personID").innerHTML = addPerson();
         }
+		else if(timer < 0 && stoptime == true){
+		timer = duration;
+		}
+
 
 		
     }, 1000);
 };
 
 function myStopFunction() {
-  clearInterval(timer);
+stoptime = true;
 }
 
 
@@ -345,7 +362,7 @@ function myStopFunction() {
 };
 
 	function nextTicket() {
-	
+	stoptime = false;
 	initaiteTimer();
 	initiateID();
 };
