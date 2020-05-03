@@ -158,18 +158,10 @@ body {
         margin-right: 20%;
     }
 
-    #alignStudentSignin{
-        margin-left: 32%;
+    #forgotPasswordSize{
+        font-size: 15px;
+        margin-bottom: 15%;
     }
-
-    #alignOperatorSignin{
-        margin-left: 31.5%;
-    }
-
-#forgotPasswordSize{
-    font-size: 15px;
-    margin-bottom: 15%;
-}
 
     @media (max-width: 600px) {
         .main {
