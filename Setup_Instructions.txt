@@ -1,0 +1,9 @@
+Requirements:
+  - Python 3.8.2
+  - Django 3.0.3
+ 
+ Setup Indtructions:
+ Run the followng commands and open the server in browser:
+  - py manage.py makemigrations
+  - py manage.py migrate
+  - py manage.py runserver
