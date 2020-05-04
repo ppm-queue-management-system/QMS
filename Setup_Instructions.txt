@@ -3,7 +3,7 @@ Requirements:
   - Django 3.0.3
  
  Setup Instructions:
- Run the followng commands and open the server in browser:
+ Run the following commands and open the server in browser:
   - py manage.py makemigrations
   - py manage.py migrate
   - py manage.py runserver
